@@ -8,6 +8,7 @@ import {
   QueryClientProvider
 } from '@tanstack/react-query'
 import * as Sentry from "@sentry/react";
+import { BrowserRouter } from 'react-router'
 import SentryErrorFallback from './components/SentryErrorFallback.jsx'
 import SentryUserSynce from './components/SentryUserSynce.jsx'
 
@@ -32,15 +33,16 @@ Sentry.init({
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}>
-      <SentryUserSynce>
-        <QueryClientProvider client={queryClient}>
-          <Sentry.ErrorBoundary fallback={<SentryErrorFallback />}>
-            <App />
-          </Sentry.ErrorBoundary>
-        </QueryClientProvider>
-      </SentryUserSynce>
-    </ClerkProvider>
+    <BrowserRouter>
+      <ClerkProvider publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}>
+        <SentryUserSynce>
+          <QueryClientProvider client={queryClient}>
+            <Sentry.ErrorBoundary fallback={<SentryErrorFallback />}>
+              <App />
+            </Sentry.ErrorBoundary>
+          </QueryClientProvider>
+        </SentryUserSynce>
+      </ClerkProvider>
+    </BrowserRouter>
   </StrictMode>,
-
 )

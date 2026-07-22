@@ -10,6 +10,7 @@ import {
     StoreIcon,
 } from "lucide-react";
 import { apiFetch } from "../lib/api";
+import { useCart } from "../store/cart";
 
 
 const Navbar = () => {
@@ -23,8 +24,8 @@ const Navbar = () => {
     const role = meData?.data?.role;
     console.log('r ', role)
 
-    //   const cartCount = useCart((s) => s.items.reduce((n, line) => n + line.quantity, 0));
-    const cartCount = 80
+      const cartCount = useCart((s) => s.items.reduce((n, line) => n + line.quantity, 0));
+    // const cartCount = 80
     return (
         <header className="sticky top-0 z-50 border-b border-base-300 bg-base-100/95 shadow-sm backdrop-blur-md">
             <div className="navbar mx-auto min-h-14 max-w-7xl px-4 py-2.5 md:px-6 md:py-3">

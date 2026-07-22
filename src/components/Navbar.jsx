@@ -15,14 +15,12 @@ import { useCart } from "../store/cart";
 
 const Navbar = () => {
     const { getToken, isSignedIn } = useAuth();
-    console.log('token', getToken, '"is ', isSignedIn)
     const { data: meData } = useQuery({
         queryKey: ["me"],
         queryFn: () => apiFetch("/api/me", { getToken }),
         enabled: isSignedIn,
     });
     const role = meData?.data?.role;
-    console.log('r ', role)
 
       const cartCount = useCart((s) => s.items.reduce((n, line) => n + line.quantity, 0));
     // const cartCount = 80

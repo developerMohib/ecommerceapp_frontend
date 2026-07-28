@@ -15,8 +15,6 @@ export async function apiFetch(path, opts = {}) {
         }
     }
 
-
-
     let res;
     try {
         res = await fetch(`${base}${path}`, {

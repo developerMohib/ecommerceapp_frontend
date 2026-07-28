@@ -35,24 +35,30 @@ export default function useCartPage() {
   }, 0);
 
   async function checkout() {
-    setCheckoutLoading(true);
-
     const body = {
       items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
     };
-console.log('body',body.items)
-    const res = await apiFetch("/api/checkout", {
-      getToken,
-      method: "POST",
-      body :body,
-    });
-console.log('ch res',res)
-    if (res?.checkoutUrl) {
-      window.location.href = res.checkoutUrl;
-      return;
-    }
+    try {
+      setCheckoutLoading(true);
+      console.log('body', body.items)
+      // const res = "" ;
+      const res = await apiFetch("/api/checkout", {
+        getToken,
+        method: "POST",
+        body: body,
+      });
+      console.log('ch res', res)
+      if (res?.checkoutUrl) {
+        window.location.href = res.checkoutUrl;
+        return;
+      }
 
+      setCheckoutLoading(false);
+    } catch (error) {
+      console.log(error)
+    }finally {
     setCheckoutLoading(false);
+  }
   }
 
   return {

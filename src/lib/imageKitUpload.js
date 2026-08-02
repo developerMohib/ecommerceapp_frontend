@@ -24,12 +24,10 @@ export async function uploadImageToImageKit(file, getToken, opts = {}) {
   const data = await res.json();
 
   if (!res.ok) {
-    console.log("[ImageKit upload]", res.status, data);
     throw new Error("ImageKit upload failed");
   }
 
   if (!data.url) {
-    console.log("[ImageKit upload] missing url in response", data);
     throw new Error("ImageKit upload failed");
   }
 

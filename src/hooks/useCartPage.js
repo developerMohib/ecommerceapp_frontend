@@ -40,14 +40,13 @@ export default function useCartPage() {
     };
     try {
       setCheckoutLoading(true);
-      console.log('body', body.items)
-      // const res = "" ;
+
       const res = await apiFetch("/api/checkout", {
         getToken,
         method: "POST",
         body: body,
       });
-      console.log('ch res', res)
+      
       if (res?.checkoutUrl) {
         window.location.href = res.checkoutUrl;
         return;

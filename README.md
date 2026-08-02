@@ -1,16 +1,40 @@
-# React + Vite
+# 🛒 PERN Stack E-Commerce Platform 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Demo App](/frontend/public/screenshot-for-readme.png)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Highlights:
 
-## React Compiler
+- 🛒 Full Stack E-Commerce App built from scratch
+- ⚛️ Frontend with React, TanStack Query, Tailwind CSS & DaisyUI
+- 🚀 Backend with Express.js & TypeScript
+- 🔐 Secure Authentication with Clerk
+- 🗄️ PostgreSQL Database hosted on Neon
+- 💳 Payments integration with Polar
+- 📦 Product, Cart & Order Management
+- 📊 Admin Dashboard to manage products
+- 💬 Real-time Customer Support Chat with Stream
+- 📹 Video Calling powered by Stream
+- ⌨️ Typing Indicators in chat
+- 😀 Message Reactions
+- 🧵 Threaded Conversations
+- 📁 File Uploads in chat
+- 🎞️ GIF Support inside messages
+- 🔔 Webhooks implemented step-by-step
+- 📤 Image Uploads & Optimization with ImageKit
+- 🚨 Monitoring, Error Tracking & Performance Tracking with Sentry
+- 📋 Structured Logs for debugging and analysis
+- ⚡ Modern SaaS / E-Commerce Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧪 Environment Variables
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend (`/frontend`)
+
+```bash
+VITE_CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
+VITE_SENTRY_DSN=<your_sentry_dsn>
+VITE_API_URL=<your_backend_api_url>
+```

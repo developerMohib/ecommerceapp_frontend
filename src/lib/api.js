@@ -56,13 +56,8 @@ export async function apiFetch(path, opts = {}) {
                 extra: { path, method, status: res.status },
             });
         }
-
         throw err;
     }
-
     return data;
-
-
-
 
 }

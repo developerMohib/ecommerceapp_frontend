@@ -1,4 +1,4 @@
-import {  useAuth } from '@clerk/react'
+import { useAuth } from '@clerk/react'
 
 import PageLoad from './components/PageLoad'
 import Layout from './components/Layout'

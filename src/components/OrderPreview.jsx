@@ -1,6 +1,5 @@
 import { PackageIcon } from "lucide-react";
-// import { IK_PRESETS, imageKitOptimizedUrl } from "../lib/imagekitUrl";
-import { imageKitOptimizedUrl, IK_PRESETS } from "~/lib/imagekit";
+import { IK_PRESETS, imageKitOptimizedUrl } from "../lib/imagekitUrl";
 
 const SIZES = {
   md: "h-[5.5rem] w-[5.5rem]",
